@@ -1,49 +1,49 @@
 //
-//  XTYAlert.h
-//  BigSport
+//  PPX_Alert.h
+//  PPX_Alert
 //
 //  Created by pipixia on 16/10/17.
-//  Copyright © 2016年 iCHSY. All rights reserved.
+//  Copyright © 2016年 pipixia. All rights reserved.
 //
-/** 只支持 ios8以上
+/** 
  *方式一 确定取消两个按钮
- XTYAlert *xtyAlert = [[XTYAlert alloc] initWithTitle:@"提示" message:@"这是一些信息"];
- [xtyAlert addBtnAlertTitle:@"确定" action:^{
+ PPX_Alert *PPXAlert = [[PPX_Alert alloc] initWithTitle:@"提示" message:@"这是一些信息"];
+ [PPXAlert addBtnAlertTitle:@"确定" action:^{
  NSLog(@"确定");
  }];
- [xtyAlert addBtnAlertTitle:@"取消" action:^{
+ [PPXAlert addBtnAlertTitle:@"取消" action:^{
  NSLog(@"取消");
  }];
- [xtyAlert showAlertWithSender:self];
+ [PPXAlert showAlertWithSender:self];
  
  *方式二 确定一个按钮
- [XTYAlert showAlertViewCertainWithTitle:@"拍照" message:@"lalala" WithUIViewController:self];
+ [PPX_Alert showAlertViewCertainWithTitle:@"拍照" message:@"lalala" WithUIViewController:self];
  
  *方式三 中间弹出几个横向按钮
- XTYAlert *xtyAlert = [[XTYAlert alloc] initWithTitle:@"提示" message:@"拍照"];
- [xtyAlert addBtnAlertTitle:@"相机" action:^{
+ PPX_Alert *PPXAlert = [[PPX_Alert alloc] initWithTitle:@"提示" message:@"拍照"];
+ [PPXAlert addBtnAlertTitle:@"相机" action:^{
  NSLog(@"相机");
  }];
- [xtyAlert addBtnAlertTitle:@"相册" action:^{
+ [PPXAlert addBtnAlertTitle:@"相册" action:^{
  NSLog(@"相册");
  }];
- [xtyAlert addBtnAlertTitle:@"取消" action:^{
+ [PPXAlert addBtnAlertTitle:@"取消" action:^{
  NSLog(@"取消");
  }];
- [xtyAlert showAlertWithSender:self];
+ [PPXAlert showAlertWithSender:self];
  
  方法四 底部弹出按钮
- XTYAlert *xtyAlert = [[XTYAlert alloc] initWithTitle:@"提示" message:@"拍照"];
- [xtyAlert addBtnSheetTitle:@"相机" action:^{
+ PPX_Alert *PPXAlert = [[PPX_Alert alloc] initWithTitle:@"提示" message:@"拍照"];
+ [PPXAlert addBtnSheetTitle:@"相机" action:^{
  NSLog(@"相机");
  }];
- [xtyAlert addBtnSheetTitle:@"相册" action:^{
+ [PPXAlert addBtnSheetTitle:@"相册" action:^{
  NSLog(@"相册");
  }];
- [xtyAlert addBtnSheetTitle:@"取消" action:^{
+ [PPXAlert addBtnSheetTitle:@"取消" action:^{
  NSLog(@"取消");
  }];
- [xtyAlert showActionSheetWithSender:self];
+ [PPXAlert showActionSheetWithSender:self];
  */
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>

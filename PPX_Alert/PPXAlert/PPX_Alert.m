@@ -1,18 +1,19 @@
 //
-//  XTYAlert.m
-//  BigSport
+//  PPX_Alert.m
+//  PPX_Alert
 //
 //  Created by pipixia on 16/10/17.
-//  Copyright © 2016年 iCHSY. All rights reserved.
+//  Copyright © 2016年 pipixia. All rights reserved.
 //
+
 
 #import "PPX_Alert.h"
 
 
-//#define iOS8_0 [[[UIDevice currentDevice] systemVersion] doubleValue] >= 8.0
+#define iOS8_0 [[[UIDevice currentDevice] systemVersion] doubleValue] >= 8.0
 
 
-@interface PPX_Alert() //<UIAlertViewDelegate,UIActionSheetDelegate>
+@interface PPX_Alert() <UIAlertViewDelegate,UIActionSheetDelegate>
 {
     NSMutableArray *_arrayAlertTitle;
     NSMutableArray *_arrayAlertAction;
@@ -86,11 +87,11 @@
         return;
     }
     self.sender = sender;
-//    if (iOS8_0) {
+    if (iOS8_0) {
         [self showAlertController];
-//    } else {
-//        [self showAlertView];
-//    }
+    } else {
+        [self showAlertView];
+    }
 }
 
 - (void)showAlertController
@@ -108,15 +109,15 @@
     }
 }
 
-//- (void)showAlertView
-//{
-//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:_title message:_message delegate:self cancelButtonTitle:nil otherButtonTitles: nil];
-//    for (NSString *title in _arrayAlertTitle) {
-//        [alert addButtonWithTitle:title];
-//    }
-//    
-//    [alert show];
-//}
+- (void)showAlertView
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:_title message:_message delegate:self cancelButtonTitle:nil otherButtonTitles: nil];
+    for (NSString *title in _arrayAlertTitle) {
+        [alert addButtonWithTitle:title];
+    }
+    
+    [alert show];
+}
 
 - (void)showActionSheetWithSender:(UIViewController *)sender
 {
@@ -124,11 +125,11 @@
         return;
     }
     self.sender = sender;
-//    if (iOS8_0) {
+    if (iOS8_0) {
         [self showActionSheetController];
-//    } else {
-//        [self showActionSheet];
-//    }
+    } else {
+        [self showActionSheet];
+    }
 }
 
 - (void)showActionSheetController
@@ -163,42 +164,42 @@
 }
 
 
-//- (void)showActionSheet
-//{
-//    
-//    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:_title delegate:self cancelButtonTitle:nil destructiveButtonTitle:_message otherButtonTitles:nil, nil];
-//    
-//    actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
-//    
-//    for (NSString *title in _arraySheetTitle) {
-//        [actionSheet addButtonWithTitle:title];
-//    }
-//    
-//    [actionSheet showInView:self.sender.view];
-//    
-//    
-//}
+- (void)showActionSheet
+{
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:_title delegate:self cancelButtonTitle:nil destructiveButtonTitle:_message otherButtonTitles:nil, nil];
+    
+    actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
+    
+    for (NSString *title in _arraySheetTitle) {
+        [actionSheet addButtonWithTitle:title];
+    }
+    
+    [actionSheet showInView:self.sender.view];
+    
+    
+}
 
-//#pragma mark - UIAlertViewDelegate
-//- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
-//{
-//    ClickAction action = _arrayAlertAction[buttonIndex];
-//    action();
-//}
-//
-//#pragma mark - UIActionSheetDelegate
-//-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-//    
-//    ClickAction action = _arraySheetAction[buttonIndex];
-//    action();
-//    
-//}
+#pragma mark - UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    ClickAction action = _arrayAlertAction[buttonIndex];
+    action();
+}
+
+#pragma mark - UIActionSheetDelegate
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    ClickAction action = _arraySheetAction[buttonIndex];
+    action();
+    
+}
 
 #pragma - mark 用于传入title显示AlertView（只有确定按钮）,没点击事件
 + (void)showAlertViewCertainWithTitle:(NSString *)title message:(NSString *)message WithUIViewController:(UIViewController *)ViewControll
 {
-//    if (iOS8_0) {
-//        
+    if (iOS8_0) {
+
         NSString *otherButtonTitle = NSLocalizedString(@"确定", nil);
         
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
@@ -212,13 +213,13 @@
         [alertController addAction:otherAction];
         
         [ViewControll presentViewController:alertController animated:YES completion:nil];
-//
-//    } else {
-//        
-//        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:nil delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-//        
-//        [alertView show];
-//    }
+
+    } else {
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:nil delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        
+        [alertView show];
+    }
 }
 
 @end

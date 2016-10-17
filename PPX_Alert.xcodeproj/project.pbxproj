@@ -15,6 +15,7 @@
 		576EC7311DB4CCF000C95FC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 576EC72F1DB4CCF000C95FC4 /* LaunchScreen.storyboard */; };
 		576EC73C1DB4CCF000C95FC4 /* PPX_AlertTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 576EC73B1DB4CCF000C95FC4 /* PPX_AlertTests.m */; };
 		576EC7471DB4CCF000C95FC4 /* PPX_AlertUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 576EC7461DB4CCF000C95FC4 /* PPX_AlertUITests.m */; };
+		576EC7571DB4CD0900C95FC4 /* PPX_Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 576EC7561DB4CD0900C95FC4 /* PPX_Alert.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		576EC7421DB4CCF000C95FC4 /* PPX_AlertUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PPX_AlertUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		576EC7461DB4CCF000C95FC4 /* PPX_AlertUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPX_AlertUITests.m; sourceTree = "<group>"; };
 		576EC7481DB4CCF000C95FC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		576EC7551DB4CD0900C95FC4 /* PPX_Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPX_Alert.h; sourceTree = "<group>"; };
+		576EC7561DB4CD0900C95FC4 /* PPX_Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPX_Alert.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 		576EC7201DB4CCF000C95FC4 /* PPX_Alert */ = {
 			isa = PBXGroup;
 			children = (
+				576EC7541DB4CD0900C95FC4 /* PPXAlert */,
 				576EC7241DB4CCF000C95FC4 /* AppDelegate.h */,
 				576EC7251DB4CCF000C95FC4 /* AppDelegate.m */,
 				576EC7271DB4CCF000C95FC4 /* ViewController.h */,
@@ -138,6 +142,15 @@
 				576EC7481DB4CCF000C95FC4 /* Info.plist */,
 			);
 			path = PPX_AlertUITests;
+			sourceTree = "<group>";
+		};
+		576EC7541DB4CD0900C95FC4 /* PPXAlert */ = {
+			isa = PBXGroup;
+			children = (
+				576EC7551DB4CD0900C95FC4 /* PPX_Alert.h */,
+				576EC7561DB4CD0900C95FC4 /* PPX_Alert.m */,
+			);
+			path = PPXAlert;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +285,7 @@
 			files = (
 				576EC7291DB4CCF000C95FC4 /* ViewController.m in Sources */,
 				576EC7261DB4CCF000C95FC4 /* AppDelegate.m in Sources */,
+				576EC7571DB4CD0900C95FC4 /* PPX_Alert.m in Sources */,
 				576EC7231DB4CCF000C95FC4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
